@@ -1819,29 +1819,29 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
         btn.insert(0, 
-            [ 
-                    InlineKeyboardButton("♾️ ǫᴜᴀʟɪᴛʏ", callback_data=f"qualities#{key}#0"),
-                    InlineKeyboardButton("🔉 ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}#0"),
-                    InlineKeyboardButton("‼ ꜱᴇᴀꜱᴏɴ",  callback_data=f"seasons#{key}#0")
-                ]
-            )
-            btn.insert(1, [
-                InlineKeyboardButton("♻️ ꜱᴇɴᴅ ᴀʟʟ♻️", callback_data=f"sendfiles#{key}")
-           
-            ])
+            [
+                InlineKeyboardButton("♾️ ǫᴜᴀʟɪᴛʏ", callback_data=f"qualities#{key}#0"),
+                InlineKeyboardButton("🔉 ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}#0"),
+                InlineKeyboardButton("‼ ꜱᴇᴀꜱᴏɴ",  callback_data=f"seasons#{key}#0")
+            ]
+        )
+        btn.insert(1, [
+            InlineKeyboardButton("♻️ ꜱᴇɴᴅ ᴀʟʟ♻️", callback_data=f"sendfiles#{key}")
+            
+        ])
     else:
         btn = []
         btn.insert(0, 
-            [ 
-                    InlineKeyboardButton("♾️ ǫᴜᴀʟɪᴛʏ", callback_data=f"qualities#{key}#0"),
-                    InlineKeyboardButton("🔉 ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}#0"),
-                    InlineKeyboardButton("‼ ꜱᴇᴀꜱᴏɴ",  callback_data=f"seasons#{key}#0")
-                ]
-            )
-            btn.insert(1, [
-                InlineKeyboardButton("♻️ ꜱᴇɴᴅ ᴀʟʟ♻️", callback_data=f"sendfiles#{key}")
-           
-            ])
+            [
+                InlineKeyboardButton("♾️ ǫᴜᴀʟɪᴛʏ", callback_data=f"qualities#{key}#0"),
+                InlineKeyboardButton("🔉 ʟᴀɴɢᴜᴀɢᴇ", callback_data=f"languages#{key}#0"),
+                InlineKeyboardButton("‼ ꜱᴇᴀꜱᴏɴ",  callback_data=f"seasons#{key}#0")
+            ]
+        )
+        btn.insert(1, [
+            InlineKeyboardButton("♻️ ꜱᴇɴᴅ ᴀʟʟ♻️", callback_data=f"sendfiles#{key}")
+            
+        ])
     if offset != "":
         req = message.from_user.id if message.from_user else 0
         try:
