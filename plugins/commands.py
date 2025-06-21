@@ -89,15 +89,15 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[
-                    InlineKeyboardButton('+ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
+                    InlineKeyboardButton('⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⇆', url=f'http://telegram.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🧧 ᴛʀᴇɴᴅɪɴɢ', callback_data="topsearch"),
-                    InlineKeyboardButton('🎟️ ᴜᴘɢʀᴀᴅᴇ', callback_data="premium"),
+                    InlineKeyboardButton('🏷 ᴛʀᴇɴᴅɪɴɢ', callback_data="topsearch"),
+                    InlineKeyboardButton('👜 ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url=f'https://t.me/Jhakaas0'),
                 ],[
-                    InlineKeyboardButton('♻️ ᴅᴍᴄᴀ', callback_data='disclaimer'),
-                    InlineKeyboardButton('👤 ᴀʙᴏᴜᴛ', callback_data='me')
+                    InlineKeyboardButton('📻 ʟᴀᴛᴇꜱᴛ ᴍᴏᴠɪᴇꜱ', url=f'http://t.me/hdmaxx'),
+                    InlineKeyboardButton('💬 ɢʀᴏᴜᴘ', url=f'https://t.me/Request_Karo_Movies_Lo')
                 ],[
-                    InlineKeyboardButton('🚫 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 🚫', callback_data="earn")
+                    InlineKeyboardButton('💸 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data="earn")
                 ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -274,12 +274,12 @@ async def start(client, message):
                 f_caption = f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), files1.file_name.split()))}"
             if STREAM_MODE:
                 btn = [
-                    [InlineKeyboardButton('𝖦𝖾𝗇𝖾𝗋𝖺𝗍𝖾 𝖲𝗍𝗋𝖾𝗆𝗂𝗇𝗀 𝖫𝗂𝗇𝗄', callback_data=f'streamfile:{file_id}')],
-                    [InlineKeyboardButton('𝖴𝗉𝖽𝖺𝗍𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅', url=UPDATE_CHANNEL_LNK)]  
+                    [InlineKeyboardButton('✅ 1 ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=f'http://t.me/hdmaxx')],
+                    [InlineKeyboardButton('✅ 2 ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=UPDATE_CHANNEL_LNK)]  
                 ]
             else:
                 btn = [
-                    [InlineKeyboardButton('𝖴𝗉𝖽𝖺𝗍𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅', url=UPDATE_CHANNEL_LNK)]
+                    [InlineKeyboardButton('✅ ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=UPDATE_CHANNEL_LNK)]
                 ]
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -304,13 +304,13 @@ async def start(client, message):
         try:
             if STREAM_MODE:
                 btn = [
-                    [InlineKeyboardButton('𝖦𝖾𝗇𝖾𝗋𝖺𝗍𝖾 𝖲𝗍𝗋𝖾𝗆𝗂𝗇𝗀 𝖫𝗂𝗇𝗄', callback_data=f'streamfile:{file_id}')],
-                    [InlineKeyboardButton('𝖴𝗉𝖽𝖺𝗍𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅', url=UPDATE_CHANNEL_LNK)]
+                    [InlineKeyboardButton('✅ 1 ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=f'http://t.me/hdmaxx')],
+                    [InlineKeyboardButton('✅ 2 ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=UPDATE_CHANNEL_LNK)]
              
                 ]
             else:
                 btn = [
-                    [InlineKeyboardButton('𝖴𝗉𝖽𝖺𝗍𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅', url=UPDATE_CHANNEL_LNK)]
+                    [InlineKeyboardButton('✅ ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=UPDATE_CHANNEL_LNK)]
                 ]
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
@@ -331,7 +331,7 @@ async def start(client, message):
                 except:
                     return
             await msg.edit_caption(f_caption)
-            k = await msg.reply(f"<b>♻️ ᴛʜɪꜱ ꜰɪʟᴇ ᴡɪʟʟ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀꜰᴛᴇʀ {get_time(DELETE_TIME)}</b>", quote=True)
+            k = await msg.reply(f"<b>🚫 𝐓𝐡𝐢𝐬 𝐌𝐨𝐯𝐢𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐆𝐨𝐢𝐧𝐠 𝐓𝐨 𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐈𝐧 <m>{get_time(DELETE_TIME)}</m>𝐓𝐨 𝐀𝐯𝐨𝐢𝐝 𝐂𝐨𝐩𝐲𝐫𝐢𝐠𝐡𝐭 ©️\n\n🗳 𝐒𝐨 𝐏𝐥𝐞𝐚𝐬𝐞 𝐅𝐨𝐫𝐰𝐚𝐫𝐝 𝐘𝐨𝐮𝐫 𝐌𝐨𝐯𝐢𝐞 𝐓𝐨 𝐒𝐚𝐯𝐞 𝐌𝐞𝐬𝐬𝐚𝐠𝐞.</b>", quote=True)
             await asyncio.sleep(DELETE_TIME)
             await msg.delete()
             await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!</b>")
@@ -357,12 +357,12 @@ async def start(client, message):
         f_caption = ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), files.file_name.split()))
     if STREAM_MODE:
         btn = [
-            [InlineKeyboardButton('𝖦𝖾𝗇𝖾𝗋𝖺𝗍𝖾 𝖲𝗍𝗋𝖾𝗆𝗂𝗇𝗀 𝖫𝗂𝗇𝗄', callback_data=f'streamfile:{file_id}')],
-            [InlineKeyboardButton('𝖴𝗉𝖽𝖺𝗍𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅', url=UPDATE_CHANNEL_LNK)]
+            [InlineKeyboardButton('✅ 1 ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=f'http://t.me/hdmaxx')],
+            [InlineKeyboardButton('✅ 2 ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=UPDATE_CHANNEL_LNK)]
         ]
     else:
         btn = [
-            [InlineKeyboardButton('𝖴𝗉𝖽𝖺𝗍𝖾 𝖢𝗁𝖺𝗇𝗇𝖾𝗅', url=UPDATE_CHANNEL_LNK)]
+            [InlineKeyboardButton('✅ ᴍʏ ᴄʜᴀɴɴᴇʟ ✅', url=UPDATE_CHANNEL_LNK)]
         ]
     msg = await client.send_cached_media(
         chat_id=message.from_user.id,
@@ -371,7 +371,7 @@ async def start(client, message):
         protect_content=settings.get('file_secure', PROTECT_CONTENT),
         reply_markup=InlineKeyboardMarkup(btn)
     )
-    k = await msg.reply(f"<b>♻️ ᴛʜɪꜱ ꜰɪʟᴇ ᴡɪʟʟ ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀꜰᴛᴇʀ {get_time(DELETE_TIME)}</b>", quote=True)     
+    k = await msg.reply(f"<b><b>🚫 𝐓𝐡𝐢𝐬 𝐌𝐨𝐯𝐢𝐞 𝐖𝐢𝐥𝐥 𝐁𝐞 𝐆𝐨𝐢𝐧𝐠 𝐓𝐨 𝐃𝐞𝐥𝐞𝐭𝐞𝐝 𝐈𝐧 <m>{get_time(DELETE_TIME)}</m>𝐓𝐨 𝐀𝐯𝐨𝐢𝐝 𝐂𝐨𝐩𝐲𝐫𝐢𝐠𝐡𝐭 ©️\n\n🗳 𝐒𝐨 𝐏𝐥𝐞𝐚𝐬𝐞 𝐅𝐨𝐫𝐰𝐚𝐫𝐝 𝐘𝐨𝐮𝐫 𝐌𝐨𝐯𝐢𝐞 𝐓𝐨 𝐒𝐚𝐯𝐞 𝐌𝐞𝐬𝐬𝐚𝐠𝐞.</b></b>", quote=True)     
     await asyncio.sleep(DELETE_TIME)
     await msg.delete()
     await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!</b>")
