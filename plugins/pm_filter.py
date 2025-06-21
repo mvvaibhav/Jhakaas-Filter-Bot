@@ -707,31 +707,26 @@ async def filter_season_cb_handler(client: Client, query: CallbackQuery):
 async def advantage_spoll_choker(bot, query):
     _, id, user = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)    
+        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
     movies = await get_poster(id, id=True)
     movie = movies.get('title')
     movie = re.sub(r"[:-]", " ", movie)
     movie = re.sub(r"\s+", " ", movie).strip()
     await query.answer(script.TOP_ALRT_MSG)
-    gl = await global_filters(bot, query.message, text=movie)    
-    if gl == False:
-        k = await manual_filters(bot, query.message, text=movie)        
-        if k == False:
-            files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)           
-            if files:
-                k = (movie, files, offset, total_results)
-                await auto_filter(bot, query, k)
-            else:
-                reqstr1 = query.from_user.id if query.from_user else 0
-                reqstr = await bot.get_users(reqstr1)                
-                if NO_RESULTS_MSG:
-                    await bot.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, movie)))               
-                contact_admin_button = InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("🔰Cʟɪᴄᴋ ʜᴇʀᴇ & ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴀᴅᴍɪɴ🔰", url=OWNER_LNK)]]
-                )               
-                k = await query.message.edit(script.MVE_NT_FND, reply_markup=contact_admin_button)
-                await asyncio.sleep(10)
-                await k.delete()
+    files, offset, total_results = await get_search_results(query.message.chat.id, movie, offset=0, filter=True)
+    if files:
+        k = (movie, files, offset, total_results)
+        await auto_filter(bot, query, k)
+    else:
+        reqstr1 = query.from_user.id if query.from_user else 0
+        reqstr = await bot.get_users(reqstr1)
+        if NO_RESULTS_MSG:
+            await bot.send_message(chat_id=BIN_CHANNEL,text=script.NORSLTS.format(reqstr.id, reqstr.mention, movie))
+        contact_admin_button = InlineKeyboardMarkup(
+            [[InlineKeyboardButton("🔰Cʟɪᴄᴋ ʜᴇʀᴇ & ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴀᴅᴍɪɴ🔰", url=OWNER_LNK)]])
+        k = await query.message.edit(script.MVE_NT_FND,reply_markup=contact_admin_button)
+        await asyncio.sleep(10)
+        await k.delete()
                 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
@@ -1589,7 +1584,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         next_shortner = int(shortner_num) + 1 if shortner_num in ["1", "2"] else None
         btn = [
             [InlineKeyboardButton(f'ꜱʜᴏʀᴛɴᴇʀ {next_shortner}', callback_data=f'set_verify{next_shortner}#{grp_id}')] if next_shortner else [],
-            [InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data=f'shortner_setgs#{grp_id}')]
+            [InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data=f'verification_setgs#{grp_id}')]
         ]    
         await query.message.reply(f"<b>ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴜᴘᴅᴀᴛᴇᴅ ꜱʜᴏʀᴛɴᴇʀ {shortner_num} ᴠᴀʟᴜᴇꜱ ✅\n\nᴡᴇʙꜱɪᴛᴇ: <code>{url_msg.text}</code>\nᴀᴘɪ: <code>{key_msg.text}</code></b>", reply_markup=InlineKeyboardMarkup(btn))
 
@@ -2033,7 +2028,3 @@ async def advantage_spell_chok(client, message):
         await message.delete()
     except:
         pass
-
-
-
-	    
