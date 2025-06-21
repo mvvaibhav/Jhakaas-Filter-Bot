@@ -22,12 +22,12 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "8193815280:AAGDgFnE-uahw1RvdLWECOmKNSGoQRQ
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://i.ibb.co/ch3n9wsf/x.jpg')).split() 
-NOR_IMG = environ.get("NOR_IMG", "https://graph.org/file/62efbcc4e7580b76530ba.jpg")
+PICS = (environ.get('PICS', 'https://myappme.shop/img/file_294.jpg https://myappme.shop/img/file_283.jpg')).split() 
+NOR_IMG = environ.get("NOR_IMG", "https://myappme.shop/img/file_291.jpg")
 MELCOW_VID = environ.get("MELCOW_VID", "https://graph.org/file/e215d12bfd4fa2155e90e.mp4")
-SPELL_IMG = environ.get("SPELL_IMG", "https://graph.org/file/13702ae26fb05df52667c.jpg")
-SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://telegra.ph/file/f983d857f3ce40795e4b8.jpg'))
-FSUB_IMG = (environ.get('FSUB_IMG', 'https://i.ibb.co/cShkPjcZ/x.jpg')).split() 
+SPELL_IMG = environ.get("SPELL_IMG", "https://myappme.shop/img/file_292.jpg")
+SUBSCRIPTION = (environ.get('SUBSCRIPTION', 'https://graph.org/file/5b4531bb88bad855e4680.jpg'))
+FSUB_IMG = (environ.get('FSUB_IMG', 'https://myappme.shop/img/file_290.jpg')).split() 
 
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1936430521').split()] 
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002760580329').split()]
@@ -50,10 +50,10 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'SilentXBotz_files')
 MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "True"), True) # Type True For Turn On MULTIPLE DB FUNTION 
 DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://multidb:multidb@cluster0.ibrzfgw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+EOYxjvyZG_MwODE1')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/+cndEFVJSm-cxYTc1')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/jhakaassupport')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Jhakaas0')
 OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/I_M_STARBOY')
-UPDATE_CHANNEL_LNK = environ.get('UPDATE_CHANNEL_LNK', 'https://t.me/+cndEFVJSm-cxYTc1')
+UPDATE_CHANNEL_LNK = environ.get('UPDATE_CHANNEL_LNK', 'https://t.me/Jhakaas0')
 
 AUTH_CHANNEL = int(environ.get('AUTH_CHANNEL', '-1002817882092'))
 AUTH_REQ_CHANNEL = int(environ.get('AUTH_REQ_CHANNEL', '-1002817882092'))
@@ -81,9 +81,9 @@ THREE_VERIFY_GAP = int(environ.get('THREE_VERIFY_GAP', "54000"))
 
 MOVIE_UPDATE_NOTIFICATION = bool(environ.get("MOVIE_UPDATE_NOTIFICATION", False))
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", True))
-MAX_B_TN = environ.get("MAX_B_TN", "8")
+MAX_B_TN = environ.get("MAX_B_TN", "6")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
-PORT = environ.get("PORT", "8089")
+PORT = environ.get("PORT", "8080")
 MSG_ALRT = environ.get('MSG_ALRT', 'Share & Support Us ♥️')
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/jhakaassupport') 
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
